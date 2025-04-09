@@ -3,10 +3,20 @@ from tkinter import messagebox
 
 window = tk.Tk()
 window.title('Крестики-нолики')
-window.geometry('300x350')
+window.geometry('300x500')
+window.configure(bg=theme['bg'])
 
 current_player = "X"
+scores = {"X": 0, "O": 0}
 buttons = []
+against_ai = False
+
+theme = {
+    "bg": "#f0f0f0",
+    "fg" "#000000",
+    "button_bg": "#ffffff",
+    "button_fg": "#000000"
+}
 
 def check_winner():
     for i in range(3):
