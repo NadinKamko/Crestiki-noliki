@@ -1,9 +1,9 @@
 import tkinter as tk
 
 def create_ui(window):
-    window.configure(bg="#f0f0f0")  # светлый фон
+    window.configure(bg="#e6f7ff")  # светлый фон
 
-    frame = tk.Frame(window, bg="#f0f0f0", bd=5, relief="ridge")  # обрамление поля
+    frame = tk.Frame(window, bg="#e6f7ff", bd=5, relief="ridge")  # обрамление поля
     frame.pack(pady=10)
 
     info_label = tk.Label(window, text="Выберите, за кого играть", font=("Arial", 14), bg="#f0f0f0", fg="#333")
