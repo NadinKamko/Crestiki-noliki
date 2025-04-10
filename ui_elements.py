@@ -26,4 +26,3 @@ def create_ui(window):
         "symbol_frame": symbol_frame
     }
 
-    }
