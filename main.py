@@ -1,62 +1,23 @@
+
 import tkinter as tk
-from tkinter import messagebox
-
-window = tk.Tk()
-window.title('Крестики-нолики')
-window.geometry('300x500')
-window.configure(bg=theme['bg'])
-
-current_player = "X"
-scores = {"X": 0, "O": 0}
-buttons = []
-against_ai = False
-
-theme = {
-    "bg": "#f0f0f0",
-    "fg" "#000000",
-    "button_bg": "#ffffff",
-    "button_fg": "#000000"
-}
-
-def check_winner():
-    for i in range(3):
-        if buttons[i][0]['text'] == buttons[i][1]['text'] == buttons[i][2]['text'] !="":
-            return True
-        if buttons[0][i]['text'] == buttons[1][i]['text'] == buttons[2][i]['text'] !="":
-            return True
-    if buttons[0][0]['text'] == buttons[1][1]['text'] == buttons[2][2]['text'] !="":
-        return True
-    if buttons[0][2]['text'] == buttons[1][1]['text'] == buttons[2][0]['text'] !="":
-        return True
-
-    return False
+from ui_elements import create_ui
+from game_board import init_game
 
 
-def on_click(row, col):
-    global current_player
+def main():
+    window = tk.Tk()
+    window.title('Крестики-нолики')
+    window.geometry('320x400')
 
-    if buttons[row][col]['text'] != "":
-        return
+    elements = create_ui(window)
+    init_game(window, elements)
 
-    buttons[row][col]['text'] = current_player
-
-    if check_winner():
-        messagebox.showinfo(f"Игра окончена!" f"Игрок {current_player} победил!")
-
-
-    current_player = "0" if current_player == "X" else "X"
+    window.mainloop()
 
 
+if __name__ == "__main__":
+    main()
 
-for i in range(3):
-    row = []
-    for j in range(3):
-        btn = tk.Button(window, text='', font=("Arial", 20), width=5, height=2, command=lambda r=i, c=j: on_click(r, c))
-        btn.grid(row=i, column=j)
-        row.append(btn)
-    buttons.append(row)
-
-window.mainloop()
 
 
 
