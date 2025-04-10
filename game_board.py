@@ -2,11 +2,17 @@
 import tkinter as tk
 from tkinter import messagebox
 
-current_player = "X"
-scores = {"X": 0, "O": 0}
-buttons = []
 
 def init_game(window, elements):
+    current_player = "X"
+    scores = {"X": 0, "O": 0}
+    buttons = []
+
+
+
+
+
+
     def reset_game():
         nonlocal current_player
         for row in buttons:
